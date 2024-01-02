@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3.12
 
 class Animal:
+    
     def __init__(self, age=0, prenom=""):
         self.age = age
         self.prenom = prenom
