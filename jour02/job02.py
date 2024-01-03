@@ -22,16 +22,16 @@ class Livre:
         return self._nombre_pages
 
     # Mutateurs (setters)
-    def set_titre(self, nouveau_titre):
-        self._titre = nouveau_titre
+    def set_titre(self, titre):
+        self._titre = titre
 
-    def set_auteur(self, nouvel_auteur):
-        self._auteur = nouvel_auteur
+    def set_auteur(self, auteur):
+        self._auteur = auteur
 
-    def set_nombre_pages(self, nouveau_nombre_pages):
+    def set_nombre_pages(self, nombre_pages):
         # Vérifier si le nouveau nombre de pages est un entier positif
-        if isinstance(nouveau_nombre_pages, int) and nouveau_nombre_pages > 0:
-            self._nombre_pages = nouveau_nombre_pages
+        if isinstance(nombre_pages, int) and nombre_pages > 0:
+            self._nombre_pages = nombre_pages
         else:
             print("⚠️  Erreur : Le nombre de pages doit être un entier positif.")
 

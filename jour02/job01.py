@@ -18,11 +18,11 @@ class Rectangle:
         return self._largeur
 
     # Mutateurs (setters)
-    def set_longueur(self, nouvelle_longueur):
-        self._longueur = nouvelle_longueur
+    def set_longueur(self, longueur):
+        self._longueur = longueur
 
-    def set_largeur(self, nouvelle_largeur):
-        self._largeur = nouvelle_largeur
+    def set_largeur(self, largeur):
+        self._largeur = largeur
 
 # Créer un rectangle avec les valeurs initiales
 mon_rectangle = Rectangle(0, 0)
