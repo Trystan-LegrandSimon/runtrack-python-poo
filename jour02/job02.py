@@ -6,6 +6,7 @@
 '''
 
 class Livre:
+    
     def __init__(self, titre, auteur, nombre_pages):
         self._titre = titre
         self._auteur = auteur

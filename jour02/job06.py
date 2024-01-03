@@ -6,6 +6,7 @@
 '''
 
 class Commande:
+    
     def __init__(self, numero_commande):
         self._numero_commande = numero_commande
         self._plats_commandes = {}  # Dictionnaire pour stocker les plats (nom, prix, statut)

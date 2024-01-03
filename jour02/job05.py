@@ -6,6 +6,7 @@
 '''
 
 class Voiture:
+    
     def __init__(self, marque, modele, annee, kilometrage):
         self._marque = marque
         self._modele = modele

@@ -6,6 +6,7 @@
 '''
 
 class Student:
+
     def __init__(self, nom, prenom, numero_etudiant):
         self._nom = nom
         self._prenom = prenom

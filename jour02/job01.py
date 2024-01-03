@@ -6,6 +6,7 @@
 '''
 
 class Rectangle:
+    
     def __init__(self, longueur, largeur):
         self._longueur = longueur
         self._largeur = largeur
