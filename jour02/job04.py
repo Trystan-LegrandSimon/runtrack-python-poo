@@ -39,7 +39,7 @@ class Student:
         print(f"Prénom: {self._prenom}")
         print(f"Id: {self._numero_etudiant}")
         print(f"Niveau: {self._level}")
-        print("--------------------------------------------------")
+        print("-" * 50)
 
 # Instanciation de l'objet représentant l'étudiant John Doe
 john_doe = Student("John", "Doe", 145)
