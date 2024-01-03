@@ -8,22 +8,22 @@
 class Rectangle:
     
     def __init__(self, longueur, largeur):
-        self._longueur = longueur
-        self._largeur = largeur
+        self.__longueur = longueur
+        self.__largeur = largeur
 
     # Assesseurs (getters)
     def get_longueur(self):
-        return self._longueur
+        return self.__longueur
 
     def get_largeur(self):
-        return self._largeur
+        return self.__largeur
 
     # Mutateurs (setters)
     def set_longueur(self, longueur):
-        self._longueur = longueur
+        self.__longueur = longueur
 
     def set_largeur(self, largeur):
-        self._largeur = largeur
+        self.__largeur = largeur
 
 # Créer un rectangle avec les valeurs initiales
 mon_rectangle = Rectangle(0, 0)

@@ -8,31 +8,31 @@
 class Livre:
     
     def __init__(self, titre, auteur, nombre_pages):
-        self._titre = titre
-        self._auteur = auteur
-        self._nombre_pages = nombre_pages
+        self.__titre = titre
+        self.__auteur = auteur
+        self.__nombre_pages = nombre_pages
 
     # Assesseurs (getters)
     def get_titre(self):
-        return self._titre
+        return self.__titre
 
     def get_auteur(self):
-        return self._auteur
+        return self.__auteur
 
     def get_nombre_pages(self):
-        return self._nombre_pages
+        return self.__nombre_pages
 
     # Mutateurs (setters)
     def set_titre(self, titre):
-        self._titre = titre
+        self.__titre = titre
 
     def set_auteur(self, auteur):
-        self._auteur = auteur
+        self.__auteur = auteur
 
     def set_nombre_pages(self, nombre_pages):
         # Vérifier si le nouveau nombre de pages est un entier positif
         if isinstance(nombre_pages, int) and nombre_pages > 0:
-            self._nombre_pages = nombre_pages
+            self.__nombre_pages = nombre_pages
         else:
             print("⚠️  Erreur : Le nombre de pages doit être un entier positif.")
 

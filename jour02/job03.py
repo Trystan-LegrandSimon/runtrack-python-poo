@@ -8,55 +8,55 @@
 class Livre:
     
     def __init__(self, titre, auteur, nombre_pages):
-        self._titre = titre
-        self._auteur = auteur
-        self._nombre_pages = nombre_pages
-        self._disponible = True
+        self.__titre = titre
+        self.__auteur = auteur
+        self.__nombre_pages = nombre_pages
+        self.__disponible = True
 
     # Assesseurs (getters)
     def get_titre(self):
-        return self._titre
+        return self.__titre
 
     def get_auteur(self):
-        return self._auteur
+        return self.__auteur
 
     def get_nombre_pages(self):
-        return self._nombre_pages
+        return self.__nombre_pages
 
     def is_disponible(self):
-        return self._disponible
+        return self.__disponible
 
     # Mutateurs (setters)
     def set_titre(self, titre):
-        self._titre = titre
+        self.__titre = titre
 
     def set_auteur(self, auteur):
-        self._auteur = auteur
+        self.__auteur = auteur
 
     def set_nombre_pages(self, nombre_pages):
         # Vérifier si le nouveau nombre de pages est un entier positif
         if isinstance(nombre_pages, int) and nombre_pages > 0:
-            self._nombre_pages = nombre_pages
+            self.__nombre_pages = nombre_pages
         else:
             print("⚠️ Erreur : Le nombre de pages doit être un entier positif.")
 
     # Méthode de vérification de disponibilité
     def verification(self):
-        return self._disponible
+        return self.__disponible
 
     # Méthode d'emprunt
     def emprunter(self):
-        if self._disponible:
+        if self.__disponible:
             print("Le livre est disponible. Emprunt en cours.")
-            self._disponible = False
+            self.__disponible = False
         else:
             print("Le livre n'est pas disponible pour l'emprunt.")
 
     # Méthode de rendu
     def rendre(self):
-        if not self._disponible:
+        if not self.__disponible:
             print("Le livre a été rendu avec succès.")
-            self._disponible = True
+            self.__disponible = True
         else:
             print("Le livre est déjà disponible.")
 

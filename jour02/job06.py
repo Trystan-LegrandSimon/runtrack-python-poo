@@ -8,33 +8,33 @@
 class Commande:
     
     def __init__(self, numero_commande):
-        self._numero_commande = numero_commande
-        self._plats_commandes = {}  # Dictionnaire pour stocker les plats (nom, prix, statut)
-        self._statut_commande = "en cours"  # Statut par défaut
+        self.__numero_commande = numero_commande
+        self.__plats_commandes = {}  # Dictionnaire pour stocker les plats (nom, prix, statut)
+        self.__statut_commande = "en cours"  # Statut par défaut
 
     def ajouter_plat(self, nom_plat, prix_plat):
-        if self._statut_commande == "en cours":
-            self._plats_commandes[nom_plat] = {"prix": prix_plat, "statut": "commandé"}
+        if self.__statut_commande == "en cours":
+            self.__plats_commandes[nom_plat] = {"prix": prix_plat, "statut": "commandé"}
             print(f"Plat '{nom_plat}' ajouté à la commande.")
         else:
             print("Impossible d'ajouter un plat à une commande terminée ou annulée.")
 
     def annuler_commande(self):
-        if self._statut_commande == "en cours":
-            self._plats_commandes.clear()
-            self._statut_commande = "annulée"
+        if self.__statut_commande == "en cours":
+            self.__plats_commandes.clear()
+            self.__statut_commande = "annulée"
             print("Commande annulée.")
         else:
             print("Impossible d'annuler une commande déjà terminée ou annulée.")
 
-    def _calculer_total(self):
-        return sum(plat["prix"] for plat in self._plats_commandes.values())
+    def calculer_total(self):
+        return sum(plat["prix"] for plat in self.__plats_commandes.values())
 
     def afficher_commande(self):
-        print(f"Commande n°{self._numero_commande} - Statut: {self._statut_commande}")
-        for nom_plat, plat_info in self._plats_commandes.items():
+        print(f"Commande n°{self.__numero_commande} - Statut: {self.__statut_commande}")
+        for nom_plat, plat_info in self.__plats_commandes.items():
             print(f"{nom_plat}: {plat_info['prix']} € - Statut: {plat_info['statut']}")
-        total = self._calculer_total()
+        total = self.calculer_total()
         print(f"Total à payer: {total} € (TVA incluse: {self.calculer_tva(total)} €)")
 
     def calculer_tva(self, montant):

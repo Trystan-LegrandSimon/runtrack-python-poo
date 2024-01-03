@@ -8,58 +8,58 @@
 class Voiture:
     
     def __init__(self, marque, modele, annee, kilometrage):
-        self._marque = marque
-        self._modele = modele
-        self._annee = annee
-        self._kilometrage = kilometrage
-        self._en_marche = False
-        self._reservoir = 50
+        self.__marque = marque
+        self.__modele = modele
+        self.__annee = annee
+        self.__kilometrage = kilometrage
+        self.__en_marche = False
+        self.__reservoir = 50
 
     # Assesseurs (getters)
     def get_marque(self):
-        return self._marque
+        return self.__marque
 
     def get_modele(self):
-        return self._modele
+        return self.__modele
 
     def get_annee(self):
-        return self._annee
+        return self.__annee
 
     def get_kilometrage(self):
-        return self._kilometrage
+        return self.__kilometrage
 
     def get_en_marche(self):
-        return self._en_marche
+        return self.__en_marche
 
     # Mutateurs (setters)
     def set_marque(self, marque):
-        self._marque = marque
+        self.__marque = marque
 
     def set_modele(self, modele):
-        self._modele = modele
+        self.__modele = modele
 
     def set_annee(self, annee):
-        self._annee = annee
+        self.__annee = annee
 
     def set_kilometrage(self, kilometrage):
-        self._kilometrage = kilometrage
+        self.__kilometrage = kilometrage
 
     # Méthode de démarrage
     def demarrer(self):
-        if self._verifier_plein():
+        if self.verifier_plein():
             print("La voiture démarre.")
-            self._en_marche = True
+            self.__en_marche = True
         else:
             print("La voiture ne peut pas démarrer. Le réservoir est trop bas...")
 
     # Méthode d'arrêt
     def arreter(self):
         print("La voiture s'arrête.")
-        self._en_marche = False
+        self.__en_marche = False
 
     # Méthode privée pour vérifier le niveau du réservoir
-    def _verifier_plein(self):
-        return self._reservoir > 5
+    def verifier_plein(self):
+        return self.__reservoir > 5
 
 # Exemple d'utilisation
 ma_voiture = Voiture("CUPRA", "Ateca", 2019, 60000)

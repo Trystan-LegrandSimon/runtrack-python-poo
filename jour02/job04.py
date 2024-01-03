@@ -1,45 +1,45 @@
-#!/usr/local/bin/python3.12
+#!/usr/bin/env python3.12
 # -*- coding: utf-8 -*-
 
 '''
-    Méthod Privée
+    Méthode Privée
 '''
 
 class Student:
 
     def __init__(self, nom, prenom, numero_etudiant):
-        self._nom = nom
-        self._prenom = prenom
-        self._numero_etudiant = numero_etudiant
-        self._credits = 0
-        self._level = self._student_eval()
+        self.__nom = nom
+        self.__prenom = prenom
+        self.__numero_etudiant = numero_etudiant
+        self.__credits = 0
+        self.__level = self.student_eval()
 
-    def _student_eval(self):
-        if self._credits >= 90:
+    def student_eval(self):
+        if self.__credits >= 90:
             return "Excellent"
-        elif self._credits >= 80:
+        elif self.__credits >= 80:
             return "Très bien"
-        elif self._credits >= 70:
+        elif self.__credits >= 70:
             return "Bien"
-        elif self._credits >= 60:
+        elif self.__credits >= 60:
             return "Passable"
         else:
             return "Insuffisant"
 
     def add_credits(self, credits):
         if credits > 0:
-            self._credits += credits
-            self._level = self._student_eval()
-            print(f"\nLe nomre de crédits de {self._nom} {self._prenom} est de : {self._credits}\n")
+            self.__credits += credits
+            self.__level = self.student_eval()
+            print(f"\nLe nombre de crédits de {self.__nom} {self.__prenom} est de : {self.__credits}\n")  # Corrections ici
         else:
             print("⚠️ Erreur : Le nombre de crédits ajouté doit être supérieur à zéro.")
 
     def student_info(self):
         print(f"Informations de l'étudiant:")
-        print(f"Nom: {self._nom}")
-        print(f"Prénom: {self._prenom}")
-        print(f"Id: {self._numero_etudiant}")
-        print(f"Niveau: {self._level}")
+        print(f"Nom: {self.__nom}")
+        print(f"Prénom: {self.__prenom}")
+        print(f"Id: {self.__numero_etudiant}")
+        print(f"Niveau: {self.__level}")
         print("-" * 50)
 
 # Instanciation de l'objet représentant l'étudiant John Doe
