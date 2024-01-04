@@ -13,7 +13,7 @@ class Ville:
     def get_nombre_habitants(self):
         return self.__nombre_habitants
 
-    def ajouter_population(self):
+    def ajout_resident(self):
         self.__nombre_habitants += 1
 
 class Personne:
@@ -24,19 +24,19 @@ class Personne:
         self.__ville = ville
         
     def ajouter_population(self):
-        self.__ville.ajouter_population()
+        self.__ville.ajout_resident()
 
 # Créer un objet Ville avec comme arguments “Paris” et 1000000
 paris = Ville("Paris", 1000000)
 
 # Afficher en console le nombre d’habitants de la ville de Paris
-print(f"Nombre d'habitants à {paris.get_nom()}: {paris.get_nombre_habitants()}")
+print(f"Nombre d'habitants à {paris.get_nom()}: {paris.get_nombre_habitants()} habitants.")
 
 # Créer un autre objet Ville avec comme arguments “Marseille” et 861635
 marseille = Ville("Marseille", 861635)
 
 # Afficher en console le nombre d’habitants de la ville de Marseille
-print(f"Nombre d'habitants à {marseille.get_nom()}: {marseille.get_nombre_habitants()}")
+print(f"Nombre d'habitants à {marseille.get_nom()}: {marseille.get_nombre_habitants()} habitants.")
 
 # Créer les objets suivants :
 # - John, 45 ans, habitant à Paris
@@ -51,5 +51,5 @@ john.ajouter_population()
 myrtille.ajouter_population()
 chloe.ajouter_population()
 
-print(f"Nombre d'habitants à {paris.get_nom()}: {paris.get_nombre_habitants()}")
-print(f"Nombre d'habitants à {marseille.get_nom()}: {marseille.get_nombre_habitants()}")
+print(f"Nombre d'habitants à {paris.get_nom()}: {paris.get_nombre_habitants()} habitants.")
+print(f"Nombre d'habitants à {marseille.get_nom()}: {marseille.get_nombre_habitants()} habitants.")
