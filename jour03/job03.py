@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 class Tache:
+    
     def __init__(self, titre, description, statut="À faire"):
         self.titre = titre
         self.description = description
