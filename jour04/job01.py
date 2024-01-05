@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 class Personne:
+    
     def __init__(self, age = 14):
         self.age = age
 
@@ -17,6 +18,7 @@ class Personne:
 
 
 class Eleve(Personne):
+    
     def allerEnCours(self):
         print("Je vais en cours")
 
@@ -25,6 +27,7 @@ class Eleve(Personne):
 
 
 class Professeur(Personne):
+    
     def __init__(self, matiereEnseignee, age=14):
         super().__init__(age)
         self.matiereEnseignee = matiereEnseignee
