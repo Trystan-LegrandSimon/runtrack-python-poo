@@ -5,7 +5,7 @@ import signal
 
 class Personne:
     
-    def __init__(self, age=14):
+    def __init__(self, age = 14):
         self.age = age
 
     def afficherAge(self):
@@ -15,19 +15,14 @@ class Personne:
         print("Hello")
 
     def modifierAge(self):
-        signal.signal(signal.SIGINT, self.handle_keyboard_interrupt)
         
         try:
             nouvel_age = int(input("Entrez le nouvel âge de la personne : "))
             self.age = nouvel_age
+        except ValueError:
+            print("\n\nOpération annulée. Mauvaise saisie.\n")
         except KeyboardInterrupt:
-            print("\nOpération annulée. Programme interrompu par l'utilisateur.")
-        finally:
-            signal.signal(signal.SIGINT, signal.default_int_handler)
-
-    def handle_keyboard_interrupt(self, signum, frame):
-        print("\nOpération annulée. Programme interrompu par l'utilisateur.")
-        exit()
+            print("\n\nOpération annulée. Programme interrompu par l'utilisateur.\n")
 
 
 class Eleve(Personne):
