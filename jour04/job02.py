@@ -1,9 +1,11 @@
 #!/usr/local/bin/python3.12
 # -*- coding: utf-8 -*-
 
+import signal
+
 class Personne:
     
-    def __init__(self, age = 14):
+    def __init__(self, age=14):
         self.age = age
 
     def afficherAge(self):
@@ -13,8 +15,19 @@ class Personne:
         print("Hello")
 
     def modifierAge(self):
-        nouvel_age = int(input("Entrez le nouvel âge de la personne : "))
-        self.age = nouvel_age
+        signal.signal(signal.SIGINT, self.handle_keyboard_interrupt)
+        
+        try:
+            nouvel_age = int(input("Entrez le nouvel âge de la personne : "))
+            self.age = nouvel_age
+        except KeyboardInterrupt:
+            print("\nOpération annulée. Programme interrompu par l'utilisateur.")
+        finally:
+            signal.signal(signal.SIGINT, signal.default_int_handler)
+
+    def handle_keyboard_interrupt(self, signum, frame):
+        print("\nOpération annulée. Programme interrompu par l'utilisateur.")
+        exit()
 
 
 class Eleve(Personne):
@@ -28,7 +41,7 @@ class Eleve(Personne):
 
 class Professeur(Personne):
     
-    def __init__(self, matiereEnseignee, age=14):
+    def __init__(self, matiereEnseignee, age):
         super().__init__(age)
         self.matiereEnseignee = matiereEnseignee
 
@@ -52,12 +65,12 @@ personne1.modifierAge()
 personne1.afficherAge()
 
 # Instanciation d'un professeur
-professeur1 = Professeur(matiereEnseignee="Informatique", age=40)
+professeur1 = Professeur(matiereEnseignee = "Informatique", age = 40)
 
 # Appel des méthodes spécifiées pour l'élève et le professeur
 eleve1.bonjour()
 eleve1.allerEnCours()
-eleve1.modifierAge(15)
+eleve1.modifierAge()
 eleve1.afficherAge()
 
 professeur1.bonjour()
